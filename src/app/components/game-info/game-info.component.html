@@ -1,0 +1,22 @@
+<nz-row [nzGutter]="[8, 8]">
+  <nz-col [nzSpan]="8">
+    <nz-card>
+      <nz-statistic
+        nzTitle="Max population reached"
+        [nzValue]="(Population$ | async)!"
+      />
+    </nz-card>
+  </nz-col>
+
+  <nz-col [nzSpan]="8">
+    <nz-card>
+      <nz-statistic nzTitle="Population" [nzValue]="(Population$ | async)!" />
+    </nz-card>
+  </nz-col>
+
+  <nz-col [nzSpan]="8">
+    <nz-card>
+      <nz-statistic nzTitle="Generation" [nzValue]="(Population$ | async)!" />
+    </nz-card>
+  </nz-col>
+</nz-row>
