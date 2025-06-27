@@ -26,6 +26,7 @@ export class RenderStepService {
       this._verifyCreatures.VerifyCreatureState(clonedCell);
 
       if (clonedCell.alive !== cell.alive) {
+        clonedCell.dirty = true;
         updatedCells.push(clonedCell);
       }
     });

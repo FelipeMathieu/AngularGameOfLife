@@ -4,7 +4,6 @@ import { UIReducersService } from './ui-reducers.service';
 import { RenderStepService } from './render-step.service';
 
 const FRAME = 1000;
-const FPS = 30;
 
 @Injectable({
   providedIn: 'root',
@@ -22,8 +21,7 @@ export class CanvasRenderService {
   ) {}
 
   public start(): void {
-    const running = this._uiSelectors.Running;
-    if (running && !this._manualRun) {
+    if (!this._manualRun) {
       this._ngZone.runOutsideAngular(() => {
         this._requestId = requestAnimationFrame((time) => this.animate(time));
       });

@@ -29,6 +29,9 @@ importers:
       '@angular/router':
         specifier: ^19.2.0
         version: 19.2.14(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.14(@angular/animations@19.2.14(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
+      '@ant-design/icons-angular':
+        specifier: ^19.0.0
+        version: 19.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.14(@angular/animations@19.2.14(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1)))(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1)))(rxjs@7.8.2)
       '@ngneat/elf':
         specifier: ^2.5.1
         version: 2.5.1(rxjs@7.8.2)
@@ -38,6 +41,9 @@ importers:
       '@ngneat/until-destroy':
         specifier: ^10.0.0
         version: 10.0.0(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
+      '@ngrx/component':
+        specifier: 19.2.1
+        version: 19.2.1(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       immer:
         specifier: ^10.1.1
         version: 10.1.1
@@ -1361,6 +1367,13 @@ packages:
     peerDependencies:
       '@angular/core': '>=13'
       rxjs: ^6.4.0 || ^7.0.0
+
+  '@ngrx/component@19.2.1':
+    resolution: {integrity: sha512-SIrp1DZK4pMVVyHDpxdQIyYcXJC2HbaFqUQGmTULurD0wTACRTJxXL3RqytT8PlPtqsPq9B+ckp6gqp3TegKlg==}
+    peerDependencies:
+      '@angular/common': ^19.0.0
+      '@angular/core': ^19.0.0
+      rxjs: ^6.5.3 || ^7.5.0
 
   '@ngtools/webpack@19.2.15':
     resolution: {integrity: sha512-H37nop/wWMkSgoU2VvrMzanHePdLRRrX52nC5tT2ZhH3qP25+PrnMyw11PoLDLv3iWXC68uB1AiKNIT+jiQbuQ==}
@@ -5922,6 +5935,13 @@ snapshots:
 
   '@ngneat/until-destroy@10.0.0(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)':
     dependencies:
+      '@angular/core': 19.2.14(rxjs@7.8.2)(zone.js@0.15.1)
+      rxjs: 7.8.2
+      tslib: 2.8.1
+
+  '@ngrx/component@19.2.1(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)':
+    dependencies:
+      '@angular/common': 19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 19.2.14(rxjs@7.8.2)(zone.js@0.15.1)
       rxjs: 7.8.2
       tslib: 2.8.1
