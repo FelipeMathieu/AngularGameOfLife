@@ -3,7 +3,12 @@
     <app-game-card>
       <app-game-info />
       <app-game-controls />
-      <app-game-field />
+
+      @defer (when FieldComponent) {
+      <ng-container *ngComponentOutlet="FieldComponent!" />
+      } @placeholder {
+      <nz-spin nzSimple />
+      }
     </app-game-card>
   </div>
 </main>
