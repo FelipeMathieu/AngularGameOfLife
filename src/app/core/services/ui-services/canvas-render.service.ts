@@ -44,7 +44,7 @@ export class CanvasRenderService {
       this._manualRun = true;
     }
 
-    if (!running || (times && iteration > times)) {
+    if ((!running && !this._manualRun) || (times && iteration > times)) {
       this._manualRun = false;
       this._uiReducers.Running = false;
       cancelAnimationFrame(this._requestId);
