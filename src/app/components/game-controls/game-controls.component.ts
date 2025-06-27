@@ -84,8 +84,10 @@ export class GameControlsComponent {
       this.Steps = 0;
     }
 
-    this._uiReducers.Running = true;
-    this._canvasRender.animate(performance.now(), times || this.Steps);
+    if (times || this.Steps) {
+      this._uiReducers.Running = true;
+      this._canvasRender.animate(performance.now(), times || this.Steps);
+    }
   }
 
   private _WatchRunning() {
