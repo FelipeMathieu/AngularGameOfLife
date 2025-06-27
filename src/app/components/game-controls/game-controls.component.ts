@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NzButtonComponent } from 'ng-zorro-antd/button';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import { CanvasRenderService } from '../../core/services/ui-services/canvas-render.service';
@@ -8,6 +8,7 @@ import {
   PauseOutline,
   PlayCircleOutline,
   StepForwardOutline,
+  FastForwardOutline,
 } from '@ant-design/icons-angular/icons';
 import { UISelectorsService } from '../../core/services/ui-services/ui-selectors.service';
 import { UIReducersService } from '../../core/services/ui-services/ui-reducers.service';
@@ -17,6 +18,8 @@ import { CreatureReducersService } from '../../core/services/creature-services/c
 import { emitOnce } from '@ngneat/elf';
 import { LetDirective } from '@ngrx/component';
 import { AsyncPipe } from '@angular/common';
+import { NzInputNumberComponent } from 'ng-zorro-antd/input-number';
+import { FormsModule } from '@angular/forms';
 
 @UntilDestroy()
 @Component({
@@ -26,13 +29,17 @@ import { AsyncPipe } from '@angular/common';
     NzButtonComponent,
     NzIconModule,
     LetDirective,
+    NzInputNumberComponent,
     AsyncPipe,
+    FormsModule,
   ],
   templateUrl: './game-controls.component.html',
   styleUrl: './game-controls.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameControlsComponent {
   protected readonly Running$!: Observable<boolean>;
+  protected Steps = 0;
 
   constructor(
     private readonly _canvasRender: CanvasRenderService,
@@ -42,7 +49,13 @@ export class GameControlsComponent {
     private readonly _creatureReducers: CreatureReducersService
   ) {
     this._iconService.addIcon(
-      ...[ClearOutline, PauseOutline, PlayCircleOutline, StepForwardOutline]
+      ...[
+        ClearOutline,
+        PauseOutline,
+        PlayCircleOutline,
+        StepForwardOutline,
+        FastForwardOutline,
+      ]
     );
 
     this.Running$ = this._uiSelectors.Running$;
@@ -50,6 +63,8 @@ export class GameControlsComponent {
   }
 
   public OnClean() {
+    this.Steps = 0;
+
     emitOnce(() => {
       this._creatureReducers.Reset();
       this._uiReducers.Reset();
@@ -64,8 +79,13 @@ export class GameControlsComponent {
     this._uiReducers.Running = false;
   }
 
-  public OnStep() {
-    this._canvasRender.animate(performance.now(), 1);
+  public OnStep(times?: number) {
+    if (times) {
+      this.Steps = 0;
+    }
+
+    this._uiReducers.Running = true;
+    this._canvasRender.animate(performance.now(), times || this.Steps);
   }
 
   private _WatchRunning() {

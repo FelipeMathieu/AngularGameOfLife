@@ -1,31 +1,39 @@
 <ng-container *ngrxLet="Running$ | async as running">
-  <div nz-flex nzJustify="center" nzAlign="center" [nzGap]="8">
-    <button
-      nz-button
-      nzDanger
-      nzShape="round"
-      (click)="OnClean()"
-      [disabled]="running"
-    >
-      <nz-icon nzType="clear" nzTheme="outline" />
-    </button>
+  <div nz-flex nzVertical nzAlign="center" [nzGap]="10">
+    <div nz-flex nzJustify="center" nzAlign="center" [nzGap]="8">
+      <button
+        nz-button
+        nzDanger
+        nzShape="round"
+        (click)="OnClean()"
+        [disabled]="running"
+      >
+        <nz-icon nzType="clear" nzTheme="outline" />
+      </button>
 
-    <button nz-button nzShape="round" (click)="OnStop()">
-      <nz-icon nzType="pause" nzTheme="outline" />
-    </button>
+      <button nz-button nzShape="round" (click)="OnStop()">
+        <nz-icon nzType="pause" nzTheme="outline" />
+      </button>
 
-    <button nz-button nzShape="round" nzType="primary" (click)="OnPlay()">
-      <nz-icon nzType="play-circle" nzTheme="outline" />
-    </button>
+      <button nz-button nzShape="round" nzType="primary" (click)="OnPlay()">
+        <nz-icon nzType="play-circle" nzTheme="outline" />
+      </button>
 
-    <button
-      nz-button
-      nzShape="round"
-      nzType="dashed"
-      (click)="OnStep()"
-      [disabled]="running"
-    >
-      <nz-icon nzType="step-forward" nzTheme="outline" />
-    </button>
+      <button
+        nz-button
+        nzShape="round"
+        nzType="dashed"
+        (click)="OnStep(1)"
+        [disabled]="running"
+      >
+        <nz-icon nzType="step-forward" nzTheme="outline" />
+      </button>
+    </div>
+    <div nz-flex nzAlign="center" nzJustify="center" [nzGap]="8">
+      <nz-input-number [nzMin]="0" [(ngModel)]="Steps" [nzDisabled]="running" />
+      <button nz-button nzShape="round" (click)="OnStep()" [disabled]="running">
+        <nz-icon nzType="fast-forward" nzTheme="outline" />
+      </button>
+    </div>
   </div>
 </ng-container>
