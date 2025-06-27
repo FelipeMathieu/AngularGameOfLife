@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Self } from '@angular/core';
 import { GameCardComponent } from './components/game-card/game-card.component';
 import { GameInfoComponent } from './components/game-info/game-info.component';
+import { GameFieldComponent } from './components/game-field/game-field.component';
 
 @Component({
   selector: 'app-root',
-  imports: [GameCardComponent, GameInfoComponent],
+  imports: [GameCardComponent, GameInfoComponent, GameFieldComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

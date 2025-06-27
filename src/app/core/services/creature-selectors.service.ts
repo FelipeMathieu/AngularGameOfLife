@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TId } from '../../common/types';
-import { creaturesStore } from '../stores/creatures-store';
+import { creaturesStore, TId } from '../stores/creatures-store';
 import {
+  getEntity,
   selectAllEntities,
   selectEntitiesCountByPredicate,
   selectEntity,
@@ -17,13 +17,17 @@ export class CreatureSelectorsService {
     return creaturesStore.pipe(selectEntity(id));
   }
 
-  public Creatures$() {
+  public ById(id: TId) {
+    return creaturesStore.query(getEntity(id));
+  }
+
+  public get Creatures$() {
     return creaturesStore.pipe(selectAllEntities());
   }
 
-  public Population$() {
+  public get Population$() {
     return creaturesStore.pipe(
-      selectEntitiesCountByPredicate((creature) => creature.Alive)
+      selectEntitiesCountByPredicate((creature) => creature.alive)
     );
   }
 }

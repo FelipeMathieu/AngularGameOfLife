@@ -17,6 +17,6 @@ export class GameInfoComponent {
   protected readonly Population$: Observable<number>;
 
   constructor(private readonly _CreatureSelectors: CreatureSelectorsService) {
-    this.Population$ = this._CreatureSelectors.Population$();
+    this.Population$ = this._CreatureSelectors.Population$;
   }
 }
