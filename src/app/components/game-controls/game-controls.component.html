@@ -1,5 +1,5 @@
 <ng-container *ngrxLet="Running$ | async as running">
-  <div nz-flex nzVertical nzAlign="center" [nzGap]="10">
+  <div nz-flex nzVertical nzAlign="center" [nzGap]="15">
     <div nz-flex nzJustify="center" nzAlign="center" [nzGap]="8">
       <button
         nz-button
@@ -15,7 +15,13 @@
         <nz-icon nzType="pause" nzTheme="outline" />
       </button>
 
-      <button nz-button nzShape="round" nzType="primary" (click)="OnPlay()">
+      <button
+        nz-button
+        nzShape="round"
+        nzType="primary"
+        (click)="OnPlay()"
+        [disabled]="running"
+      >
         <nz-icon nzType="play-circle" nzTheme="outline" />
       </button>
 
@@ -29,8 +35,20 @@
         <nz-icon nzType="step-forward" nzTheme="outline" />
       </button>
     </div>
-    <div nz-flex nzAlign="center" nzJustify="center" [nzGap]="8">
-      <nz-input-number [nzMin]="0" [(ngModel)]="Steps" [nzDisabled]="running" />
+    <div nz-flex nzAlign="flex-end" nzJustify="center" [nzGap]="10">
+      <div nz-flex nzVertical nzAlign="flex-start" [nzGap]="3">
+        <span nz-typography nzType="secondary">
+          Number of generations to advance:
+        </span>
+        <nz-input-number
+          [nzMin]="0"
+          [(ngModel)]="Steps"
+          [nzDisabled]="running"
+          [style]="{
+            width: '100%'
+          }"
+        />
+      </div>
       <button nz-button nzShape="round" (click)="OnStep()" [disabled]="running">
         <nz-icon nzType="fast-forward" nzTheme="outline" />
       </button>

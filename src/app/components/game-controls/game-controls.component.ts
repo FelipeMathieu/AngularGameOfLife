@@ -20,6 +20,7 @@ import { LetDirective } from '@ngrx/component';
 import { AsyncPipe } from '@angular/common';
 import { NzInputNumberComponent } from 'ng-zorro-antd/input-number';
 import { FormsModule } from '@angular/forms';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 @UntilDestroy()
 @Component({
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     NzInputNumberComponent,
     AsyncPipe,
     FormsModule,
+    NzTypographyModule,
   ],
   templateUrl: './game-controls.component.html',
   styleUrl: './game-controls.component.scss',
