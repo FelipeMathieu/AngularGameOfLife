@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { creaturesStore, TId } from '../stores/creatures-store';
+import { creaturesStore, TId } from '../../stores/creatures-store';
 import {
   getEntity,
   selectAllEntities,
@@ -8,6 +8,7 @@ import {
 } from '@ngneat/elf-entities';
 import { combineLatest } from 'rxjs';
 import { select } from '@ngneat/elf';
+import { values } from 'lodash';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,10 @@ export class CreatureSelectorsService {
 
   public ById(id: TId) {
     return creaturesStore.query(getEntity(id));
+  }
+
+  public get Creatures() {
+    return values(creaturesStore.query((state) => state.entities));
   }
 
   public get Creatures$() {

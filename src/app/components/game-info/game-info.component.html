@@ -16,7 +16,7 @@
 
   <nz-col [nzSpan]="8">
     <nz-card>
-      <nz-statistic nzTitle="Generation" [nzValue]="0" />
+      <nz-statistic nzTitle="Generation" [nzValue]="(Generations$ | async)!" />
     </nz-card>
   </nz-col>
 </nz-row>

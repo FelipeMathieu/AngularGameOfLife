@@ -1,13 +1,7 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Self,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CELL_SIZE, FIELD_SIZE } from '../../common/constants';
-import { CreatureReducersService } from '../../core/services/creature-reducers.service';
-import { CreatureSelectorsService } from '../../core/services/creature-selectors.service';
+import { CreatureReducersService } from '../../core/services/creature-services/creature-reducers.service';
+import { CreatureSelectorsService } from '../../core/services/creature-services/creature-selectors.service';
 import { map, tap } from 'rxjs';
 import { fillCreature } from '../../core/helpers/fill-creature';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -17,7 +11,6 @@ import { ICreature, TId } from '../../core/stores/creatures-store';
 @Component({
   selector: 'app-game-field',
   imports: [],
-  providers: [CreatureReducersService],
   templateUrl: './game-field.component.html',
   styleUrl: './game-field.component.scss',
 })
@@ -30,7 +23,7 @@ export class GameFieldComponent implements AfterViewInit {
   private _context!: CanvasRenderingContext2D;
 
   constructor(
-    @Self() private readonly _creatureReducers: CreatureReducersService,
+    private readonly _creatureReducers: CreatureReducersService,
     private readonly _creatureSelectors: CreatureSelectorsService
   ) {}
 
@@ -39,8 +32,7 @@ export class GameFieldComponent implements AfterViewInit {
     const context = canvas.getContext('2d');
 
     if (!context) {
-      console.error('Failed to get 2D context from canvas.');
-      return;
+      throw new Error('Failed to get 2D context from canvas.');
     }
 
     this._context = context;
