@@ -6,6 +6,8 @@ import {
   selectEntitiesCountByPredicate,
   selectEntity,
 } from '@ngneat/elf-entities';
+import { combineLatest } from 'rxjs';
+import { select } from '@ngneat/elf';
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +31,13 @@ export class CreatureSelectorsService {
     return creaturesStore.pipe(
       selectEntitiesCountByPredicate((creature) => creature.alive)
     );
+  }
+
+  public get MaxPopulation$() {
+    return creaturesStore.pipe(select((state) => state.maxPopulation));
+  }
+
+  public get MaxPopulationAndPopulation$() {
+    return combineLatest([this.Population$, this.MaxPopulation$]);
   }
 }

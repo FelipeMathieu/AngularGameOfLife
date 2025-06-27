@@ -3,7 +3,7 @@
     <nz-card>
       <nz-statistic
         nzTitle="Max population reached"
-        [nzValue]="(Population$ | async)!"
+        [nzValue]="(MaxPopulation$ | async)!"
       />
     </nz-card>
   </nz-col>
@@ -16,7 +16,7 @@
 
   <nz-col [nzSpan]="8">
     <nz-card>
-      <nz-statistic nzTitle="Generation" [nzValue]="(Population$ | async)!" />
+      <nz-statistic nzTitle="Generation" [nzValue]="0" />
     </nz-card>
   </nz-col>
 </nz-row>

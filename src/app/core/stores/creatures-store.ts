@@ -1,5 +1,5 @@
 import { withEntities } from '@ngneat/elf-entities';
-import { createStore } from '@ngneat/elf';
+import { createStore, withProps } from '@ngneat/elf';
 import { FIELD_SIZE } from '../../common/constants';
 
 export type TId = `${number},${number}`;
@@ -10,6 +10,10 @@ export interface ICreature {
   x: number;
   y: number;
   dirty: boolean;
+}
+
+interface IMaxPopulation {
+  maxPopulation: number;
 }
 
 const buildCreatures = () => {
@@ -36,6 +40,7 @@ export const creaturesStore = createStore(
   {
     name: 'Creatures',
   },
+  withProps<IMaxPopulation>({ maxPopulation: 0 }),
   withEntities<ICreature>({
     initialValue: buildCreatures(),
   })

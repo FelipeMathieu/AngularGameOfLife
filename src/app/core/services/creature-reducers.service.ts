@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import { creaturesStore, ICreature, TId } from '../stores/creatures-store';
-import {
-  getAllEntities,
-  updateEntities,
-  upsertEntities,
-} from '@ngneat/elf-entities';
-import { fillCreature } from '../helpers/fill-creature';
+import { creaturesStore, ICreature } from '../stores/creatures-store';
+import { updateEntities, upsertEntities } from '@ngneat/elf-entities';
 
 @Injectable()
 export class CreatureReducersService {
@@ -17,5 +12,12 @@ export class CreatureReducersService {
 
   public UpdateCreature(creature: ICreature) {
     creaturesStore.update(updateEntities(creature.id, creature));
+  }
+
+  public UpdateMaxPopulation(value: number) {
+    creaturesStore.update((state) => ({
+      ...state,
+      maxPopulation: value,
+    }));
   }
 }

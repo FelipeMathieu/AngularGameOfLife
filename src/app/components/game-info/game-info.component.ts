@@ -14,9 +14,11 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameInfoComponent {
-  protected readonly Population$: Observable<number>;
+  protected readonly Population$!: Observable<number>;
+  protected readonly MaxPopulation$!: Observable<number>;
 
   constructor(private readonly _CreatureSelectors: CreatureSelectorsService) {
     this.Population$ = this._CreatureSelectors.Population$;
+    this.MaxPopulation$ = this._CreatureSelectors.MaxPopulation$;
   }
 }

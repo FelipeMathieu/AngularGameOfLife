@@ -45,6 +45,7 @@ export class GameFieldComponent implements AfterViewInit {
 
     this._context = context;
     this._ObserveCreatures();
+    this._WatchMaxPopulation();
   }
 
   public CellClick(event: MouseEvent) {
@@ -85,6 +86,17 @@ export class GameFieldComponent implements AfterViewInit {
       untilDestroyed(this),
       map((creatures) => creatures.filter((cell) => cell.dirty)),
       tap(this.HandleCreatures.bind(this))
+    ).subscribe();
+  }
+
+  private _WatchMaxPopulation() {
+    this._creatureSelectors.MaxPopulationAndPopulation$.pipe(
+      untilDestroyed(this),
+      tap(([population, maxPopulation]) => {
+        if (population > maxPopulation) {
+          this._creatureReducers.UpdateMaxPopulation(population);
+        }
+      })
     ).subscribe();
   }
 }
