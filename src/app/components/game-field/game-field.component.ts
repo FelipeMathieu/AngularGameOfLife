@@ -6,6 +6,7 @@ import { map, tap } from 'rxjs';
 import { fillCreature } from '../../core/helpers/fill-creature';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { ICreature, TId } from '../../core/stores/creatures-store';
+import { UISelectorsService } from '../../core/services/ui-services/ui-selectors.service';
 
 @UntilDestroy()
 @Component({
@@ -24,7 +25,8 @@ export class GameFieldComponent implements AfterViewInit {
 
   constructor(
     private readonly _creatureReducers: CreatureReducersService,
-    private readonly _creatureSelectors: CreatureSelectorsService
+    private readonly _creatureSelectors: CreatureSelectorsService,
+    private readonly _uiSelectors: UISelectorsService
   ) {}
 
   ngAfterViewInit(): void {
@@ -41,7 +43,9 @@ export class GameFieldComponent implements AfterViewInit {
   }
 
   public CellClick(event: MouseEvent) {
-    if (!this._canvasRef) {
+    const running = this._uiSelectors.Running;
+
+    if (!this._canvasRef || running) {
       return;
     }
 
