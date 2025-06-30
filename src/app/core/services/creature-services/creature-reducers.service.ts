@@ -10,14 +10,25 @@ import { values } from 'lodash';
 export class CreatureReducersService {
   constructor() {}
 
+  /**
+   * Inserts or updates a list of creatures in the store.
+   * If a creature already exists, it will be updated; otherwise, it will be added.
+   */
   public BatchUpdate(creatures: ICreature[]) {
     creaturesStore.update(upsertEntities(creatures));
   }
 
+  /**
+   * Updates an existing creature in the store by its ID.
+   * Only updates if the creature already exists.
+   */
   public UpdateCreature(creature: ICreature) {
     creaturesStore.update(updateEntities(creature.id, creature));
   }
 
+  /**
+   * Updates the maximum population value in the store.
+   */
   public UpdateMaxPopulation(value: number) {
     creaturesStore.update((state) => ({
       ...state,
@@ -25,6 +36,10 @@ export class CreatureReducersService {
     }));
   }
 
+  /**
+   * Resets all living creatures to a dead and dirty state.
+   * Then performs a batch update and resets maxPopulation to 0.
+   */
   public Reset() {
     const livingCreatures = values(
       creaturesStore.query((state) => state.entities)

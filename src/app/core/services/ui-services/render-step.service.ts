@@ -17,6 +17,16 @@ export class RenderStepService {
     private readonly _verifyCreatures: VerifyCreaturesService
   ) {}
 
+  /**
+   * Executes a single render step in the Game of Life simulation.
+   *
+   * - Iterates over all current creatures and verifies their next state (alive or dead).
+   * - Detects any changes and marks affected creatures as dirty.
+   * - Applies a batch update only for the changed creatures to optimize performance.
+   * - Triggers the UI update to reflect the next generation.
+   *
+   * This method is side-effectful: it mutates the application state and advances the simulation.
+   */
   public Run() {
     const cells = this._creatureSelectors.Creatures;
     const updatedCells: ICreature[] = [];

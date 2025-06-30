@@ -20,6 +20,9 @@ export class CanvasRenderService {
     private readonly _renderStep: RenderStepService
   ) {}
 
+  /**
+   * Starts the animation loop if not in manual run mode.
+   */
   public start(): void {
     if (!this._manualRun) {
       this._ngZone.runOutsideAngular(() => {
@@ -28,12 +31,21 @@ export class CanvasRenderService {
     }
   }
 
+  /**
+   * Stops the animation loop if running and not in manual mode.
+   */
   public stop(): void {
     if (!this._manualRun && this._requestId) {
       cancelAnimationFrame(this._requestId);
     }
   }
 
+  /**
+   * Core animation loop.
+   * @param time - The current time from requestAnimationFrame.
+   * @param times - Optional number of frames to run (manual mode).
+   * @param iteration - Current iteration/frame count (used in manual mode).
+   */
   public animate(time: number, times?: number, iteration = 1): void {
     const running = this._uiSelectors.Running;
     const fps = this._uiSelectors.Fps;

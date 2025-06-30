@@ -8,6 +8,10 @@ import { FPS } from '../../../common/constants';
 export class UIReducersService {
   constructor() {}
 
+  /**
+   * Sets the frames per second (FPS) value in the game UI state.
+   * @param value The new FPS value to set.
+   */
   public set Fps(value: number) {
     gameUIStore.update((state) => ({
       ...state,
@@ -15,6 +19,10 @@ export class UIReducersService {
     }));
   }
 
+  /**
+   * Sets whether the game is currently running or paused in the UI state.
+   * @param value Boolean indicating if the game is running (true) or stopped (false).
+   */
   public set Running(value: boolean) {
     gameUIStore.update((state) => ({
       ...state,
@@ -22,6 +30,9 @@ export class UIReducersService {
     }));
   }
 
+  /**
+   * Advances the game to the next generation by incrementing the generation counter.
+   */
   public NextGeneration() {
     gameUIStore.update((state) => ({
       ...state,
@@ -29,6 +40,12 @@ export class UIReducersService {
     }));
   }
 
+  /**
+   * Resets the game UI state to its initial default values:
+   * - FPS set to the default constant
+   * - Generation counter reset to zero
+   * - Game marked as not running (paused)
+   */
   public Reset() {
     gameUIStore.update(() => ({
       fps: FPS,

@@ -13,7 +13,11 @@ export class CreatureNeighborsService {
   constructor(private readonly _creatureSelectors: CreatureSelectorsService) {}
 
   /**
-   * A function that returns the giving creature
+   * Returns the 8 surrounding neighbors of the given creature (cell) in a toroidal grid.
+   * The grid wraps around edges, so neighbors on edges will wrap to the opposite side.
+   *
+   * @param cell The creature whose neighbors we want to retrieve.
+   * @returns An array of neighboring ICreature objects: 3 above, 2 on the sides, and 3 below.
    */
   public GetNeighbors(cell: ICreature) {
     return [
