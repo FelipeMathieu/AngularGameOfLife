@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UiSelectorsService } from './ui-selectors.service';
+import { UISelectorsService } from './ui-selectors.service';
 
 describe('UiSelectorsService', () => {
-  let service: UiSelectorsService;
+  let service: UISelectorsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UiSelectorsService);
+    service = TestBed.inject(UISelectorsService);
   });
 
   it('should be created', () => {

@@ -1,9 +1,12 @@
-<nz-row [nzGutter]="[8, 8]">
+<nz-row id="game-info-wrapper" [nzGutter]="[8, 8]">
   <nz-col [nzSpan]="24">
     <ng-container *ngrxLet="Fps$ | async as fps">
       <div nz-flex nzAlign="center" nzJustify="center" [nzGap]="10" nzVertical>
-        <span nz-typography nzType="secondary"> FPS: {{ fps }} </span>
+        <span id="game-fps" nz-typography nzType="secondary">
+          FPS: {{ fps }}
+        </span>
         <nz-slider
+          id="fps-slider"
           [nzDefaultValue]="MaxFps"
           [ngModel]="fps"
           [nzMin]="1"
@@ -20,6 +23,7 @@
   <nz-col [nzSpan]="8">
     <nz-card>
       <nz-statistic
+        id="max-population"
         nzTitle="Max population reached"
         [nzValue]="(MaxPopulation$ | async)!"
       />
@@ -28,13 +32,21 @@
 
   <nz-col [nzSpan]="8">
     <nz-card>
-      <nz-statistic nzTitle="Population" [nzValue]="(Population$ | async)!" />
+      <nz-statistic
+        id="population"
+        nzTitle="Population"
+        [nzValue]="(Population$ | async)!"
+      />
     </nz-card>
   </nz-col>
 
   <nz-col [nzSpan]="8">
     <nz-card>
-      <nz-statistic nzTitle="Generation" [nzValue]="(Generations$ | async)!" />
+      <nz-statistic
+        id="generation"
+        nzTitle="Generation"
+        [nzValue]="(Generations$ | async)!"
+      />
     </nz-card>
   </nz-col>
 </nz-row>

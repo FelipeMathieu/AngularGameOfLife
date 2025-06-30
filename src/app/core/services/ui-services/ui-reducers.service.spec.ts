@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UiReducersService } from './ui-reducers.service';
+import { UIReducersService } from './ui-reducers.service';
 
 describe('UiReducersService', () => {
-  let service: UiReducersService;
+  let service: UIReducersService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(UiReducersService);
+    service = TestBed.inject(UIReducersService);
   });
 
   it('should be created', () => {
