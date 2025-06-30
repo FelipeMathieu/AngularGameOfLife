@@ -39,7 +39,7 @@ const mockUISelector = createSpyObject(UISelectorsService, {
 
 let mockUIReducers: any;
 
-fdescribe('GameInfoComponent', () => {
+describe('GameInfoComponent', () => {
   let spectator: Spectator<GameInfoComponent>;
   const createComponent = createComponentFactory({
     component: GameInfoComponent,
@@ -114,8 +114,6 @@ fdescribe('GameInfoComponent', () => {
       spectator.tick();
 
       spectator.triggerEventHandler('#fps-slider', 'ngModelChange', 5);
-
-      spectator.tick();
 
       expect(
         Object.getOwnPropertyDescriptor(mockUIReducers, 'Fps')?.set
