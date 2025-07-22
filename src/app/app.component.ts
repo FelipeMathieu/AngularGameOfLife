@@ -1,4 +1,4 @@
-import { Component, OnInit, Type } from '@angular/core';
+import { Component, OnInit, signal, Type } from '@angular/core';
 import { GameCardComponent } from './components/game-card/game-card.component';
 import { GameInfoComponent } from './components/game-info/game-info.component';
 import { GameControlsComponent } from './components/game-controls/game-controls.component';
@@ -21,7 +21,7 @@ import { GameFieldComponent } from './components/game-field/game-field.component
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  protected FieldComponent?: Type<GameFieldComponent>;
+  protected FieldComponent = signal<Type<GameFieldComponent> | null>(null);
 
   constructor() {}
 
@@ -34,6 +34,6 @@ export class AppComponent implements OnInit {
       './components/game-field/game-field.component'
     );
 
-    this.FieldComponent = GameFieldComponent;
+    this.FieldComponent.set(GameFieldComponent);
   }
 }

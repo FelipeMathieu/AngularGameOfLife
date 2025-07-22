@@ -5,7 +5,7 @@
       <app-game-controls />
 
       @defer (when FieldComponent) {
-      <ng-container *ngComponentOutlet="FieldComponent!" />
+      <ng-container *ngComponentOutlet="FieldComponent()" />
       } @placeholder {
       <nz-spin nzSimple />
       }
