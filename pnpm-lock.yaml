@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@angular-architects/module-federation':
-        specifier: 20.0.0
-        version: 20.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)(encoding@0.1.13)
+        specifier: 19.0.0
+        version: 19.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)(encoding@0.1.13)
       '@angular/common':
         specifier: ^19.2.0
         version: 19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
@@ -103,8 +103,8 @@ importers:
         specifier: ~2.1.0
         version: 2.1.0(jasmine-core@5.6.0)(karma-jasmine@5.1.0(karma@6.4.4))(karma@6.4.4)
       ngx-build-plus:
-        specifier: ^20.0.0
-        version: 20.0.0(@angular-devkit/build-angular@19.2.15(@angular/compiler-cli@19.2.14(@angular/compiler@19.2.14)(typescript@5.7.3))(@angular/compiler@19.2.14)(@rspack/core@1.4.9)(@types/node@24.0.4)(chokidar@4.0.3)(jiti@1.21.7)(karma@6.4.4)(typescript@5.7.3)(vite@6.2.7(@types/node@24.0.4)(jiti@1.21.7)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)))(@schematics/angular@19.2.15(chokidar@4.0.3))(rxjs@7.8.2)
+        specifier: ^19.0.0
+        version: 19.0.0(@angular-devkit/build-angular@19.2.15(@angular/compiler-cli@19.2.14(@angular/compiler@19.2.14)(typescript@5.7.3))(@angular/compiler@19.2.14)(@rspack/core@1.4.9)(@types/node@24.0.4)(chokidar@4.0.3)(jiti@1.21.7)(karma@6.4.4)(typescript@5.7.3)(vite@6.2.7(@types/node@24.0.4)(jiti@1.21.7)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)))(@schematics/angular@19.2.15(chokidar@4.0.3))(rxjs@7.8.2)
       typescript:
         specifier: ~5.7.2
         version: 5.7.3
@@ -115,16 +115,16 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@angular-architects/module-federation-runtime@20.0.0':
-    resolution: {integrity: sha512-06qoytemnCY/MCRFvdbbX/jSflqNMVTMuddnprid0Wfuc2lVsSgCv2Xi0FZFKjvhDHb1xYpmMQNExxKoXdp80g==}
+  '@angular-architects/module-federation-runtime@19.0.0':
+    resolution: {integrity: sha512-d5xGwnY4+vdQi2ntfN1gX3pXQaHPX2ZfxgNXSEJtQkVqZ+D5HoA/vyq6Y1ou1qelQObQ4SMtLWk9ii0EeYgN9Q==}
     peerDependencies:
-      '@angular/common': '>=20.0.0'
-      '@angular/core': '>=20.0.0'
-      '@module-federation/enhanced': ^0.9.0
-      '@module-federation/runtime-core': ^0.6.21
+      '@angular/common': '>=18.0.0'
+      '@angular/core': '>=18.0.0'
+      '@module-federation/enhanced': ^0.8.7
+      '@module-federation/runtime-core': ^0.6.15
 
-  '@angular-architects/module-federation@20.0.0':
-    resolution: {integrity: sha512-EonYL6P5Yu1kCV6yXW8uYhTGBGG3E77+FEWosDnbDlWXuj80mGOKYdqE5xNxSyLldTJIKfEgt7x8//bIOmkWbA==}
+  '@angular-architects/module-federation@19.0.0':
+    resolution: {integrity: sha512-5iniq3XvUuE4DItn3qqcECIDeh7L54tte59pNBe40pqDm0NFCbrRQ/swRIMw9MrXZCtcoYWCHg7r05vJpDjxHA==}
 
   '@angular-devkit/architect@0.1902.15':
     resolution: {integrity: sha512-RbqhStc6ZoRv57ZqLB36VOkBkAdU3nNezCvIs0AJV5V4+vLPMrb0hpIB0sF+9yMlMjWsolnRsj0/Fil+zQG3bw==}
@@ -3710,11 +3710,11 @@ packages:
       '@angular/platform-browser': ^19.0.0
       '@angular/router': ^19.0.0
 
-  ngx-build-plus@20.0.0:
-    resolution: {integrity: sha512-cm1ZMTACAN3DEqBt/alS84zwVGgL5HAl5Dk/wh7CPyGUBQnLaxiAhjFZ6iykxgSO3e9ebIZmDBvTC480piC1eA==}
+  ngx-build-plus@19.0.0:
+    resolution: {integrity: sha512-JXzRvDZH1gQ2xGiePduHoMeR9kaK1cHHhT6d6npVBq8aWGFHs1iAg/5/gkieCsz2QfrcaoSF8ZBb9ZhcGX4Z2g==}
     peerDependencies:
-      '@angular-devkit/build-angular': '>=20.0.0'
-      '@schematics/angular': '>=20.0.0'
+      '@angular-devkit/build-angular': '>=19.0.0'
+      '@schematics/angular': '>=19.0.0'
       rxjs: '>= 6.0.0'
 
   node-addon-api@6.1.0:
@@ -4778,6 +4778,10 @@ packages:
       webpack-cli:
         optional: true
 
+  webpack-merge@5.10.0:
+    resolution: {integrity: sha512-+4zXKdx7UnO+1jaN4l2lHVD+mFvnlZQP/6ljaJVb4SZiwIKeUnrT5l0gkT8z+n4hKpC+jpOv6O9R+gLtag7pSA==}
+    engines: {node: '>=10.0.0'}
+
   webpack-merge@6.0.1:
     resolution: {integrity: sha512-hXXvrjtx2PLYx4qruKl+kyRSLc52V+cCvMxRjmKwoA+CBbbF5GfIBtR6kCvl0fYGqTUPKB+1ktVmTHqMOzgCBg==}
     engines: {node: '>=18.0.0'}
@@ -4957,7 +4961,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@angular-architects/module-federation-runtime@20.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)':
+  '@angular-architects/module-federation-runtime@19.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)':
     dependencies:
       '@angular/common': 19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 19.2.14(rxjs@7.8.2)(zone.js@0.15.1)
@@ -4965,9 +4969,9 @@ snapshots:
       '@module-federation/runtime-core': 0.17.0
       tslib: 2.8.1
 
-  '@angular-architects/module-federation@20.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)(encoding@0.1.13)':
+  '@angular-architects/module-federation@19.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)(encoding@0.1.13)':
     dependencies:
-      '@angular-architects/module-federation-runtime': 20.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)
+      '@angular-architects/module-federation-runtime': 19.0.0(@angular/common@19.2.14(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.14(rxjs@7.8.2)(zone.js@0.15.1))(@module-federation/enhanced@0.9.1(@rspack/core@1.4.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.7.3)(webpack@5.98.0))(@module-federation/runtime-core@0.17.0)
       callsite: 1.0.0
       node-fetch: 2.7.0(encoding@0.1.13)
       semver: 7.7.2
@@ -8968,12 +8972,12 @@ snapshots:
     transitivePeerDependencies:
       - rxjs
 
-  ngx-build-plus@20.0.0(@angular-devkit/build-angular@19.2.15(@angular/compiler-cli@19.2.14(@angular/compiler@19.2.14)(typescript@5.7.3))(@angular/compiler@19.2.14)(@rspack/core@1.4.9)(@types/node@24.0.4)(chokidar@4.0.3)(jiti@1.21.7)(karma@6.4.4)(typescript@5.7.3)(vite@6.2.7(@types/node@24.0.4)(jiti@1.21.7)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)))(@schematics/angular@19.2.15(chokidar@4.0.3))(rxjs@7.8.2):
+  ngx-build-plus@19.0.0(@angular-devkit/build-angular@19.2.15(@angular/compiler-cli@19.2.14(@angular/compiler@19.2.14)(typescript@5.7.3))(@angular/compiler@19.2.14)(@rspack/core@1.4.9)(@types/node@24.0.4)(chokidar@4.0.3)(jiti@1.21.7)(karma@6.4.4)(typescript@5.7.3)(vite@6.2.7(@types/node@24.0.4)(jiti@1.21.7)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)))(@schematics/angular@19.2.15(chokidar@4.0.3))(rxjs@7.8.2):
     dependencies:
       '@angular-devkit/build-angular': 19.2.15(@angular/compiler-cli@19.2.14(@angular/compiler@19.2.14)(typescript@5.7.3))(@angular/compiler@19.2.14)(@rspack/core@1.4.9)(@types/node@24.0.4)(chokidar@4.0.3)(jiti@1.21.7)(karma@6.4.4)(typescript@5.7.3)(vite@6.2.7(@types/node@24.0.4)(jiti@1.21.7)(less@4.2.2)(sass@1.85.0)(terser@5.39.0))
       '@schematics/angular': 19.2.15(chokidar@4.0.3)
       rxjs: 7.8.2
-      webpack-merge: 6.0.1
+      webpack-merge: 5.10.0
 
   node-addon-api@6.1.0:
     optional: true
@@ -10112,6 +10116,12 @@ snapshots:
       - debug
       - supports-color
       - utf-8-validate
+
+  webpack-merge@5.10.0:
+    dependencies:
+      clone-deep: 4.0.1
+      flat: 5.0.2
+      wildcard: 2.0.1
 
   webpack-merge@6.0.1:
     dependencies:
