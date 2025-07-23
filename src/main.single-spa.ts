@@ -28,6 +28,8 @@ const lifeCycles = singleSpaAngular({
   NgZone,
 });
 
-export const bootstrap = lifeCycles.bootstrap;
-export const mount = lifeCycles.mount;
-export const unmount = lifeCycles.unmount;
+const bootstrap = lifeCycles.bootstrap;
+const mount = lifeCycles.mount;
+const unmount = lifeCycles.unmount;
+
+export { bootstrap, mount, unmount };
