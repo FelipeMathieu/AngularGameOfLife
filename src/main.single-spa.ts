@@ -14,7 +14,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-const lifeCycles = singleSpaAngular({
+export const { bootstrap, mount, unmount } = singleSpaAngular({
   bootstrapFunction: (singleSpaProps) => {
     singleSpaProps.singleSpa.next(singleSpaProps);
 
@@ -27,9 +27,3 @@ const lifeCycles = singleSpaAngular({
   NavigationStart,
   NgZone,
 });
-
-const bootstrap = lifeCycles.bootstrap;
-const mount = lifeCycles.mount;
-const unmount = lifeCycles.unmount;
-
-export { bootstrap, mount, unmount };
