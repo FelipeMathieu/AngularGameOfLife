@@ -5,6 +5,5 @@
     "types": []
   },
   "files": ["src/main.ts", "src/main.single-spa.ts"],
-  "include": ["src/**/*.d.ts"],
-  "exclude": ["src/main.ts", "src/bootstrap.ts"]
+  "include": ["src/**/*.d.ts"]
 }
