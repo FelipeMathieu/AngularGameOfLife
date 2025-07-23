@@ -37,9 +37,10 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "main": "src/main.ts",
+            "main": "src/main.single-spa.ts",
             "extraWebpackConfig": "webpack.config.js",
-            "commonChunk": false
+            "commonChunk": false,
+            "allowedCommonJsDependencies": ["lodash"]
           },
           "configurations": {
             "production": {
@@ -61,7 +62,8 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "main": "src/main.ts"
             }
           },
           "defaultConfiguration": "production"
