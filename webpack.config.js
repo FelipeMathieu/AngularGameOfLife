@@ -5,9 +5,9 @@ const {
 
 module.exports = {
   ...withModuleFederationPlugin({
-    name: "angular-game-of-life",
+    name: "angularGameOfLife",
     exposes: {
-      "./Component": "./src/app/app.component.ts",
+      "./Component": "./src/main.single-spa.ts",
     },
     shared: {
       ...shareAll({
